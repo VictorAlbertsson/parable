@@ -4,14 +4,14 @@
 
 (label (test-function-1 x y)
     (if (> x y)
-        (true)
-	(false)))
+        true
+	false))
 
 (tuple test-tuple
-    [foo . test-union]
-    [bar . i32])
+    [foo test-union]
+    [bar i32])
 
 (label (test-function-2 x y)
     (test-tuple
-        [foo . (test-function-1 x y)]
-	[bar . (- x y)]))
+        [foo (test-function-1 x y)]
+	[bar (- x y)]))
